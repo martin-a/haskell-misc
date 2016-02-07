@@ -1,0 +1,21 @@
+name:              Treasure
+version:           1.0
+Build-Type:        Simple
+cabal-version:     >= 1.8
+
+library
+  Hs-Source-Dirs:       src
+  Exposed-modules: Treasure.Split
+  Build-depends:        base
+
+executable treasure
+  main-is:         Main.hs
+  hs-source-dirs:  src
+  build-depends:   base
+
+test-suite treasure-test
+  main-is:         Test.hs
+  hs-source-dirs:  test
+  Ghc-Options:     -XTemplateHaskell
+  build-depends:   base, test-framework, test-framework-th, test-framework-hunit, test-framework-quickcheck2, HUnit, QuickCheck, Treasure
+  type: exitcode-stdio-1.0
